@@ -766,13 +766,6 @@ name = "chain-storage"
 version = "0.1.0"
 dependencies = [
  "chain-core",
-]
-
-[[package]]
-name = "chain-storage-sqlite-old"
-version = "0.1.0"
-dependencies = [
- "chain-core",
  "rusqlite",
  "thiserror",
 ]
@@ -1954,7 +1947,6 @@ dependencies = [
  "chain-crypto",
  "chain-impl-mockchain",
  "chain-storage",
- "chain-storage-sqlite-old",
  "chain-time",
  "error-chain",
  "futures 0.1.29",
@@ -2014,7 +2006,6 @@ dependencies = [
  "chain-crypto",
  "chain-impl-mockchain",
  "chain-storage",
- "chain-storage-sqlite-old",
  "chain-time",
  "ed25519-bip32",
  "error-chain",

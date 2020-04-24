@@ -2,7 +2,7 @@ use crate::testing::measurement::{
     attribute::Consumption, marker::ResourcesUsage, thresholds::Thresholds,
 };
 use std::fmt;
-use sysinfo::{ProcessExt, SystemExt};
+//use sysinfo::{ProcessExt, SystemExt};
 use thiserror::Error;
 
 #[derive(Error, Debug)]
@@ -67,24 +67,24 @@ pub struct ConsumptionBenchmarkRun {
 
 impl ConsumptionBenchmarkRun {
     pub fn snapshot(&mut self) -> Result<(), ConsumptionBenchmarkError> {
-        let mut system = sysinfo::System::new_all();
-        system.refresh_all();
+        // let mut system = sysinfo::System::new_all();
+        // system.refresh_all();
 
-        let (_, process) = system
-            .get_processes()
-            .iter()
-            .find(|(pid, _)| (**pid as usize) == self.definition.pid)
-            .ok_or(ConsumptionBenchmarkError::NoProcessWitId(
-                self.definition.pid,
-            ))?;
+        // let (_, process) = system
+        //     .get_processes()
+        //     .iter()
+        //     .find(|(pid, _)| (**pid as usize) == self.definition.pid)
+        //     .ok_or(ConsumptionBenchmarkError::NoProcessWitId(
+        //         self.definition.pid,
+        //     ))?;
 
-        let marker = ResourcesUsage::new(
-            process.cpu_usage() as u32,
-            process.memory() as u32,
-            process.virtual_memory() as u32,
-        );
+        // let marker = ResourcesUsage::new(
+        //     process.cpu_usage() as u32,
+        //     process.memory() as u32,
+        //     process.virtual_memory() as u32,
+        // );
 
-        self.markers.push(marker);
+        // self.markers.push(marker);
         Ok(())
     }
 
